@@ -1,0 +1,40 @@
+
+trigger:
+- master
+
+pool:
+  wt-pool
+
+steps:
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: '$(Build.SourcesDirectory)'
+ 
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.SourcesDirectory)'
+    includeRootFolder: False
+    archiveType: 'zip'
+    archiveFile: $(FILENAME)
+    replaceExistingArchive: true
+  displayName: 'archive files'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: '*.zip'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+  displayName: 'Stage Artifacts'
+
+- task: UniversalPackages@0
+  inputs:
+    command: 'publish'
+    publishDirectory: '$(Build.ArtifactStagingDirectory)'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: 'ab5b1c73-43f0-41cc-9ea4-038797f92acd/9f52fb0e-2622-4697-b0ca-5f49b61b3805'
+    vstsFeedPackagePublish: 'wt-artifact'
+    versionOption: 'patch'
+
+
+
