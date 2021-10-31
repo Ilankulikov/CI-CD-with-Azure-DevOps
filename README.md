@@ -36,18 +36,20 @@ For the CI/CD I've created a pipeline which using Ansible to deploy the artifact
 >*The whole process of deployment to the Staging environment is completely automated while for the deployment to the Production environment a approval is required*
 
 The CD pipline in Azure DevOps:
+![pipeline](https://user-images.githubusercontent.com/90269123/139593031-8e3227d8-3ac9-4456-8610-63e54de82899.jpg)
 
 
 As you can see, once a new artifact added to Azure DevOps Artifacts it triggers the CD to the Staging enviroment.
 
 Example of how to use ansible for the whole process:
+![example](https://user-images.githubusercontent.com/90269123/139593043-ce63bcd1-209c-4e69-855f-91f7af77e18e.jpg)
 
 
 >Note: Ive linked to each pipeline(stage and prod) a variable groups from the library and passing them in the command line as extra vars and using them to fill the .env file variables.
 some of them contain sensitive information and are therefore not exposed to all.
 
 ## Prerequisites for the project
-#
+
 1. __To provision the infrastructure I've used my previous project:__
 https://github.com/Ilankulikov/Week_6
 
