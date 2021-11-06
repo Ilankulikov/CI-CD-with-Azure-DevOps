@@ -1,13 +1,6 @@
 ---
-  - name: "Deploy bootcamp-app"
-    become: true
-    hosts: all
-    
-    tasks:
-
     # Stop and delete all running services by pm2.
     # Assuming only one app running on the machine.
-
       - name: "Stop & delete all"
         shell: pm2 delete all
         args: 
@@ -26,7 +19,7 @@
 
       - name: Copy and unarchive artifact file
         unarchive:
-          src: '{{ artifact_path }}'
+          src: '{{ artifact_path }}{{ appDir }}'
           dest: '{{ homeDir }}/{{ appDir }}'
 
       - name: "Template a file"
@@ -36,7 +29,7 @@
           owner: '{{ user }}'
           mode: u=r,g=r,o=r
 
-    # Install nodemon to avoid error
+    # Install nodemon to overcome missing files
       - name: "install nodemon"
         shell: npm install --save-dev nodemon@2
         args: 

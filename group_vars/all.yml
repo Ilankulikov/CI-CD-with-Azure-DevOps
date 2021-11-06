@@ -4,4 +4,3 @@ appDir : # App directory
 repo: # repository name
 account: # Git account
 user: # User name
-artifact_path: #path to the artifact we want to deploy
