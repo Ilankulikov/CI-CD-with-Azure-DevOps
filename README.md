@@ -43,28 +43,35 @@ For the CI/CD I've created a pipeline which using Ansible to deploy the artifact
 
 For convenience, I've imported this repository to Azure Repos and used it in the pipeline as an artifact which allows me to run this Ansible playbook on any machine(On which Asible is installed).
 
-The CD pipline in Azure DevOps:
+**The CD pipline in Azure DevOps:**
 
+![pipeline](https://user-images.githubusercontent.com/90269123/140613014-f0d60630-fc66-4de4-80c6-2fdeef441677.JPG)
 
 
 As you can see, once a new artifact added to Azure DevOps Artifacts it triggers the CD to the Staging enviroment.
 
-Stages Configuration:
+**Stages Configuration:**
 
 The Staging deployment stage is fully automatic and is triggered when there is a new artifact of Bootcamp Application.(link below)
 
-![pics]()
+__example:__
+
+![stage](https://user-images.githubusercontent.com/90269123/140613158-2e05a98e-5512-4521-b1f0-2d3ae6592221.jpg)
+
 
 The Production deployment stage is activated when a user with permissions approves the deployment after a successful deployment in the Staging environment.
 In addition, the artifact that are deployed on the environment are exactly the same as the files that were deployed in the previous stage.(when the pipeline runs, the files that were on the Agent are not deleted)
 
-![pics]()
+![prod](https://user-images.githubusercontent.com/90269123/140613217-74905c8e-0977-4947-928e-f5d3e6dc5557.jpg)
 
 
 >Note: Ive linked to each pipeline(stage and prod) a variable groups from the library and passing them in the command line as extra vars and using them to fill the .env file variables.
 some of them contain sensitive information and are therefore not exposed to all.
 
-![pic]()
+![ex](https://user-images.githubusercontent.com/90269123/140613480-b0db76bc-91ec-49bc-bccf-d921cae55883.jpg)
+
+![link](https://user-images.githubusercontent.com/90269123/140613274-4432e8ba-0b59-4d15-b6bb-66bb39650d35.jpg)
+
 
 ## Prerequisites for the project
 
