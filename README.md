@@ -1,4 +1,5 @@
-## Week 7 CI/CD
+## Week 7 Project
+
 # CI/CD with Azure DevOps
 
 __Configure CI/CD pipelines to deploy the Node Weight Tracker application for 2 environments: Staging and Production.__
@@ -7,9 +8,9 @@ __In this project I have used everything we've learned so far and previous proje
 
 ## Prerequisites for the project
 
-- __IaC with Terraform- Provisioning of two identical environments : [Week 6 project](https://github.com/Ilankulikov/Week_6) .__
+- __IaC with Terraform- Provisioning of two identical environments : [Week 6 project](https://github.com/Ilankulikov/Terraform-project-for-Ansible) .__
 
-- __Configuration Management with Ansible - Installing all the dependencies and deploying the application for the first time on the remote machines: [Week 6 Ansible project](https://github.com/Ilankulikov/Week_6_Ansible) .__ 
+- __Configuration Management with Ansible - Installing all the dependencies and deploying the application for the first time on the remote machines: [Week 6 Ansible project](https://github.com/Ilankulikov/Configuration-Management-with-Ansible) .__ 
 
 - __Node Weight Tracker - The Bootcamp application which you can find [here](https://github.com/Ilankulikov/bootcamp-app) .__
 
